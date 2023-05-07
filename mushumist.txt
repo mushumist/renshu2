@@ -1,0 +1,26 @@
+
+
+//ダンプ
+mysqldump -h localhost -u root -pLucky4#JKSK --databases mctoillio > /home/jumpei/mctoillio.sql
+
+
+移行先サーバーにて
+$ mysql -u root -p
+> create database mctoillio;
+> create user 'oilmaster'@'localhost' identified by 'Je@fSZ+L4K#DFJ3esFa';
+> grant insert,select,update,delete,alter on mctoillio.* to oilmaster@localhost;
+> \q
+
+
+
+//リストア
+mysql -u root -pLucky4#JKSK mctoillio < /var/www/html/file/mctoillio.sql
+
+Unknown collation: 'utf8mb4_0900_ai_ci' が出る場合は
+
+sqlファイル中の
+utf8mb4_0900_ai_ci	を
+utf8mb4_general_ci　に置き換え
+
+
+
