@@ -1,4 +1,4 @@
-
+//test1
 
 //ダンプ
 mysqldump -h localhost -u root -pLucky4#JKSK --databases mctoillio > /home/jumpei/mctoillio.sql
